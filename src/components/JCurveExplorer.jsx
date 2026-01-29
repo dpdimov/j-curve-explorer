@@ -156,12 +156,11 @@ const JCurveExplorer = () => {
   const zeroLineY = scaleY(0);
 
   return (
-    <div style={{
+    <div className="page-wrapper" style={{
       minHeight: '100vh',
       background: 'linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0f0f1a 100%)',
       color: '#e8e6e3',
-      fontFamily: "'IBM Plex Sans', -apple-system, sans-serif",
-      padding: '40px'
+      fontFamily: "'IBM Plex Sans', -apple-system, sans-serif"
     }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
@@ -281,13 +280,66 @@ const JCurveExplorer = () => {
         .comparison-select:focus {
           border-color: rgba(236, 72, 153, 0.4);
         }
+
+        .main-layout {
+          display: grid;
+          grid-template-columns: 300px 1fr;
+          gap: 48px;
+        }
+        .metrics-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 16px;
+          margin-bottom: 32px;
+        }
+        .chart-container {
+          width: 100%;
+          overflow: hidden;
+        }
+        .chart-container svg {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+        .page-title {
+          font-size: 42px;
+        }
+        .page-wrapper {
+          padding: 40px;
+        }
+
+        @media (max-width: 900px) {
+          .main-layout {
+            grid-template-columns: 1fr;
+            gap: 32px;
+          }
+          .metrics-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+          }
+          .page-title {
+            font-size: 28px;
+          }
+          .page-wrapper {
+            padding: 20px;
+          }
+          .metric-value {
+            font-size: 22px;
+          }
+          .metric-label {
+            font-size: 10px;
+          }
+          .preset-btn {
+            padding: 10px 14px;
+            font-size: 12px;
+          }
+        }
       `}</style>
 
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Header */}
         <div style={{ marginBottom: '48px' }}>
-          <h1 style={{
-            fontSize: '42px',
+          <h1 className="page-title" style={{
             fontWeight: 300,
             marginBottom: '12px',
             background: 'linear-gradient(135deg, #e8e6e3 0%, #63b3ed 100%)',
@@ -295,7 +347,7 @@ const JCurveExplorer = () => {
             WebkitTextFillColor: 'transparent',
             letterSpacing: '-1px'
           }}>
-            The J-Curve Explorer
+            J-Curve Explorer
           </h1>
           <p style={{
             color: '#666',
@@ -343,7 +395,7 @@ const JCurveExplorer = () => {
           {presets[selectedPreset]?.description || params.description}
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '300px 1fr', gap: '48px' }}>
+        <div className="main-layout">
           {/* Controls Panel */}
           <div>
             <h3 style={{
@@ -473,12 +525,7 @@ const JCurveExplorer = () => {
           {/* Chart Area */}
           <div>
             {/* Metrics Row */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: '16px',
-              marginBottom: '32px'
-            }}>
+            <div className="metrics-grid">
               <div className="metric-card">
                 <div className="metric-value">£{metrics.totalFundingNeeded}k</div>
                 <div className="metric-label">Total Funding Needed</div>
@@ -498,13 +545,13 @@ const JCurveExplorer = () => {
             </div>
 
             {/* SVG Chart */}
-            <div style={{
+            <div className="chart-container" style={{
               background: 'rgba(0,0,0,0.3)',
               borderRadius: '16px',
               padding: '24px',
               border: '1px solid rgba(255,255,255,0.05)'
             }}>
-              <svg width={width} height={height} style={{ display: 'block' }}>
+              <svg viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet">
                 {/* Grid lines */}
                 {[...Array(7)].map((_, i) => {
                   const y = padding.top + (chartHeight / 6) * i;
