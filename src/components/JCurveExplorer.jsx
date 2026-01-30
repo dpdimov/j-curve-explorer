@@ -158,8 +158,8 @@ const JCurveExplorer = () => {
   return (
     <div className="page-wrapper" style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0f0f1a 100%)',
-      color: '#e8e6e3',
+      background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%)',
+      color: '#1e293b',
       fontFamily: "'IBM Plex Sans', -apple-system, sans-serif"
     }}>
       <style>{`
@@ -171,7 +171,7 @@ const JCurveExplorer = () => {
           padding: 12px 20px;
           border: 1px solid rgba(255,255,255,0.1);
           background: rgba(255,255,255,0.03);
-          color: #a0a0a0;
+          color: #64748b;
           font-size: 13px;
           font-weight: 500;
           cursor: pointer;
@@ -181,12 +181,12 @@ const JCurveExplorer = () => {
         .preset-btn:hover {
           background: rgba(255,255,255,0.08);
           border-color: rgba(255,255,255,0.2);
-          color: #e8e6e3;
+          color: #1e293b;
         }
         .preset-btn.active {
           background: linear-gradient(135deg, rgba(99, 179, 237, 0.15), rgba(129, 140, 248, 0.15));
           border-color: rgba(99, 179, 237, 0.4);
-          color: #63b3ed;
+          color: #2563eb;
           box-shadow: 0 0 20px rgba(99, 179, 237, 0.1);
         }
 
@@ -202,7 +202,7 @@ const JCurveExplorer = () => {
         }
         .slider-value {
           font-family: 'IBM Plex Mono', monospace;
-          color: #63b3ed;
+          color: #2563eb;
           font-weight: 500;
         }
         input[type="range"] {
@@ -217,7 +217,7 @@ const JCurveExplorer = () => {
           -webkit-appearance: none;
           width: 18px;
           height: 18px;
-          background: linear-gradient(135deg, #63b3ed, #818cf8);
+          background: linear-gradient(135deg, #2563eb, #7c3aed);
           border-radius: 50%;
           cursor: pointer;
           box-shadow: 0 2px 10px rgba(99, 179, 237, 0.4);
@@ -238,7 +238,7 @@ const JCurveExplorer = () => {
           font-family: 'IBM Plex Mono', monospace;
           font-size: 28px;
           font-weight: 500;
-          color: #63b3ed;
+          color: #2563eb;
           margin-bottom: 4px;
         }
         .metric-label {
@@ -264,14 +264,14 @@ const JCurveExplorer = () => {
         .toggle-btn.active {
           background: rgba(236, 72, 153, 0.15);
           border-color: rgba(236, 72, 153, 0.4);
-          color: #ec4899;
+          color: #db2777;
         }
 
         .comparison-select {
           padding: 10px 16px;
           background: rgba(255,255,255,0.05);
           border: 1px solid rgba(255,255,255,0.1);
-          color: #e8e6e3;
+          color: #1e293b;
           font-size: 13px;
           border-radius: 6px;
           cursor: pointer;
@@ -342,7 +342,7 @@ const JCurveExplorer = () => {
           <h1 className="page-title" style={{
             fontWeight: 300,
             marginBottom: '12px',
-            background: 'linear-gradient(135deg, #e8e6e3 0%, #63b3ed 100%)',
+            background: 'linear-gradient(135deg, #1e293b 0%, #2563eb 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             letterSpacing: '-1px'
@@ -350,7 +350,7 @@ const JCurveExplorer = () => {
             J-Curve Explorer
           </h1>
           <p style={{
-            color: '#666',
+            color: '#94a3b8',
             fontSize: '16px',
             maxWidth: '600px',
             lineHeight: 1.6
@@ -386,10 +386,10 @@ const JCurveExplorer = () => {
           padding: '20px',
           marginBottom: '40px',
           fontSize: '14px',
-          color: '#a0a0a0',
+          color: '#64748b',
           lineHeight: 1.6
         }}>
-          <span style={{ color: '#63b3ed', fontWeight: 500 }}>
+          <span style={{ color: '#2563eb', fontWeight: 500 }}>
             {presets[selectedPreset]?.name || 'Custom'}:
           </span>{' '}
           {presets[selectedPreset]?.description || params.description}
@@ -402,7 +402,7 @@ const JCurveExplorer = () => {
               fontSize: '12px',
               textTransform: 'uppercase',
               letterSpacing: '1px',
-              color: '#666',
+              color: '#94a3b8',
               marginBottom: '24px'
             }}>
               Parameters
@@ -493,7 +493,7 @@ const JCurveExplorer = () => {
                 fontSize: '12px',
                 textTransform: 'uppercase',
                 letterSpacing: '1px',
-                color: '#666',
+                color: '#94a3b8',
                 marginBottom: '16px'
               }}>
                 Compare
@@ -531,7 +531,7 @@ const JCurveExplorer = () => {
                 <div className="metric-label">Total Funding Needed</div>
               </div>
               <div className="metric-card">
-                <div className="metric-value" style={{ color: '#ec4899' }}>{metrics.breakEvenMonth}</div>
+                <div className="metric-value" style={{ color: '#db2777' }}>{metrics.breakEvenMonth}</div>
                 <div className="metric-label">Break-Even (Months)</div>
               </div>
               <div className="metric-card">
@@ -539,7 +539,7 @@ const JCurveExplorer = () => {
                 <div className="metric-label">Monthly Burn</div>
               </div>
               <div className="metric-card">
-                <div className="metric-value" style={{ color: '#10b981' }}>{metrics.monthsOfRunway}</div>
+                <div className="metric-value" style={{ color: '#16a34a' }}>{metrics.monthsOfRunway}</div>
                 <div className="metric-label">Months Runway Needed</div>
               </div>
             </div>
@@ -589,7 +589,7 @@ const JCurveExplorer = () => {
                     <path
                       d={generatePath(comparisonData)}
                       fill="none"
-                      stroke="#ec4899"
+                      stroke="#db2777"
                       strokeWidth="2"
                       opacity="0.6"
                       strokeDasharray="6,4"
@@ -600,12 +600,12 @@ const JCurveExplorer = () => {
                 {/* Main curve area fill */}
                 <defs>
                   <linearGradient id="curveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#63b3ed" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="#63b3ed" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#2563eb" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="#2563eb" stopOpacity="0" />
                   </linearGradient>
                   <linearGradient id="comparisonGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#ec4899" stopOpacity="0.3" />
-                    <stop offset="100%" stopColor="#ec4899" stopOpacity="0" />
+                    <stop offset="0%" stopColor="#db2777" stopOpacity="0.3" />
+                    <stop offset="100%" stopColor="#db2777" stopOpacity="0" />
                   </linearGradient>
                 </defs>
 
@@ -625,9 +625,9 @@ const JCurveExplorer = () => {
                 />
                 <defs>
                   <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#63b3ed" />
-                    <stop offset="50%" stopColor="#818cf8" />
-                    <stop offset="100%" stopColor="#10b981" />
+                    <stop offset="0%" stopColor="#2563eb" />
+                    <stop offset="50%" stopColor="#7c3aed" />
+                    <stop offset="100%" stopColor="#16a34a" />
                   </linearGradient>
                 </defs>
 
@@ -640,14 +640,14 @@ const JCurveExplorer = () => {
                         cx={scaleX(minPoint.month)}
                         cy={scaleY(minPoint.cash)}
                         r="6"
-                        fill="#ef4444"
-                        stroke="#0a0a0f"
+                        fill="#dc2626"
+                        stroke="#f8fafc"
                         strokeWidth="2"
                       />
                       <text
                         x={scaleX(minPoint.month)}
                         y={scaleY(minPoint.cash) + 24}
-                        fill="#ef4444"
+                        fill="#dc2626"
                         fontSize="11"
                         fontFamily="IBM Plex Mono"
                         textAnchor="middle"
@@ -664,7 +664,7 @@ const JCurveExplorer = () => {
                   y1={padding.top}
                   x2={scaleX(params.monthsToRevenue)}
                   y2={height - padding.bottom}
-                  stroke="#10b981"
+                  stroke="#16a34a"
                   strokeWidth="1"
                   strokeDasharray="4,4"
                   opacity="0.5"
@@ -672,7 +672,7 @@ const JCurveExplorer = () => {
                 <text
                   x={scaleX(params.monthsToRevenue)}
                   y={padding.top - 10}
-                  fill="#10b981"
+                  fill="#16a34a"
                   fontSize="10"
                   fontFamily="IBM Plex Sans"
                   textAnchor="middle"
@@ -752,10 +752,10 @@ const JCurveExplorer = () => {
                       fill="rgba(0,0,0,0.5)"
                       rx="6"
                     />
-                    <line x1="0" y1="5" x2="30" y2="5" stroke="#63b3ed" strokeWidth="2" />
-                    <text x="40" y="9" fill="#a0a0a0" fontSize="11">{presets[selectedPreset]?.name || 'Current'}</text>
-                    <line x1="0" y1="25" x2="30" y2="25" stroke="#ec4899" strokeWidth="2" strokeDasharray="6,4" />
-                    <text x="40" y="29" fill="#a0a0a0" fontSize="11">{presets[comparisonPreset]?.name}</text>
+                    <line x1="0" y1="5" x2="30" y2="5" stroke="#2563eb" strokeWidth="2" />
+                    <text x="40" y="9" fill="#64748b" fontSize="11">{presets[selectedPreset]?.name || 'Current'}</text>
+                    <line x1="0" y1="25" x2="30" y2="25" stroke="#db2777" strokeWidth="2" strokeDasharray="6,4" />
+                    <text x="40" y="29" fill="#64748b" fontSize="11">{presets[comparisonPreset]?.name}</text>
                   </g>
                 )}
               </svg>
@@ -769,14 +769,14 @@ const JCurveExplorer = () => {
               borderRadius: '12px',
               border: '1px solid rgba(255,255,255,0.05)',
               fontSize: '13px',
-              color: '#888',
+              color: '#64748b',
               lineHeight: 1.7
             }}>
-              <strong style={{ color: '#a0a0a0' }}>Reading the curve:</strong> The
-              <span style={{ color: '#ef4444' }}> depth</span> of the trough (£{metrics.peakDeficit}k) represents your total funding requirement—
+              <strong style={{ color: '#64748b' }}>Reading the curve:</strong> The
+              <span style={{ color: '#dc2626' }}> depth</span> of the trough (£{metrics.peakDeficit}k) represents your total funding requirement—
               money you must raise before the business sustains itself. The
-              <span style={{ color: '#63b3ed' }}> slope</span> of descent is your burn rate. The
-              <span style={{ color: '#10b981' }}> width</span> of the trough ({params.monthsToRevenue} months to revenue)
+              <span style={{ color: '#2563eb' }}> slope</span> of descent is your burn rate. The
+              <span style={{ color: '#16a34a' }}> width</span> of the trough ({params.monthsToRevenue} months to revenue)
               reflects R&D cycles and time-to-market. Steeper recovery curves indicate higher gross margins
               and faster revenue scaling.
             </div>
