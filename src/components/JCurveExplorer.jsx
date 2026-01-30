@@ -209,7 +209,7 @@ const JCurveExplorer = () => {
           width: 100%;
           height: 6px;
           -webkit-appearance: none;
-          background: rgba(255,255,255,0.1);
+          background: #e2e8f0;
           border-radius: 3px;
           outline: none;
         }
@@ -546,10 +546,10 @@ const JCurveExplorer = () => {
 
             {/* SVG Chart */}
             <div className="chart-container" style={{
-              background: 'rgba(0,0,0,0.3)',
+              background: '#ffffff',
               borderRadius: '16px',
               padding: '24px',
-              border: '1px solid rgba(255,255,255,0.05)'
+              border: '1px solid #e2e8f0'
             }}>
               <svg viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="xMidYMid meet">
                 {/* Grid lines */}
@@ -562,7 +562,7 @@ const JCurveExplorer = () => {
                       y1={y}
                       x2={width - padding.right}
                       y2={y}
-                      stroke="rgba(255,255,255,0.05)"
+                      stroke="#e2e8f0"
                       strokeDasharray="4,4"
                     />
                   );
@@ -574,7 +574,7 @@ const JCurveExplorer = () => {
                   y1={zeroLineY}
                   x2={width - padding.right}
                   y2={zeroLineY}
-                  stroke="rgba(255,255,255,0.2)"
+                  stroke="#94a3b8"
                   strokeWidth="1"
                 />
 
@@ -749,13 +749,14 @@ const JCurveExplorer = () => {
                       y="-10"
                       width="150"
                       height="50"
-                      fill="rgba(0,0,0,0.5)"
+                      fill="#f1f5f9"
+                      stroke="#e2e8f0"
                       rx="6"
                     />
                     <line x1="0" y1="5" x2="30" y2="5" stroke="#2563eb" strokeWidth="2" />
-                    <text x="40" y="9" fill="#64748b" fontSize="11">{presets[selectedPreset]?.name || 'Current'}</text>
+                    <text x="40" y="9" fill="#1e293b" fontSize="11">{presets[selectedPreset]?.name || 'Current'}</text>
                     <line x1="0" y1="25" x2="30" y2="25" stroke="#db2777" strokeWidth="2" strokeDasharray="6,4" />
-                    <text x="40" y="29" fill="#64748b" fontSize="11">{presets[comparisonPreset]?.name}</text>
+                    <text x="40" y="29" fill="#1e293b" fontSize="11">{presets[comparisonPreset]?.name}</text>
                   </g>
                 )}
               </svg>
